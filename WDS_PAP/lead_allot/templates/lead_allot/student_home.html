@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% comment %}
+    context vars:
+    student: Information of student currently logged in
+    leaders : Inviter Leader
+{% endcomment %}
+{% block title %}Student Home{% endblock %}
+
+{% block content %}
+       {% comment %}
+        Nav Bar
+    {% endcomment %}
+    <div class="navbar-fixed">
+        <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><span style="padding-left: 50px"> Hi, {{ student.name }}</span></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="{% url 'chat:index' %}"><span style="padding-right: 50px">Chat Room</span> </a></li>
+              <li><a href="{% url 'home' %}"><span style="padding-right: 50px">Logout</span> </a></li>
+          </ul>
+        </div>
+        </nav>
+    </div>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+    <div class="container">
+        <h2>STUDENT ACCOUNT</h2>
+        <h4>You are invited by:</h4>
+
+        {% if student.is_avail %}
+            <ul class="collection with-header">
+            <li class="collection-header"><h4>Invitation</h4></li>
+            {% for leader in leaders %}
+                <li class="collection-item"><div>{{ leader.name }}-(Group no:{{ leader.rank }})<a href="{% url 'Accept invite' leader.reg_no student.reg_no %}" class="secondary-content"><i class="material-icons">group_add</i></a></div></li>
+            {% endfor %}
+            </ul>
+
+            {% else %}
+                You have already accepted an invitation.
+            {% endif %}
+
+            {% if student.is_avail == False %}
+                <h4>Your Group:</h4>
+                <ul class="collection with-header">
+                    <li class="collection-header"><h4> Group No: {{ student.grp_no }} </h4></li>
+                {% for leader in leaders %}
+                {% if leader.rank == student.grp_no %}
+                    <li class="collection-item"><div>Group Leader: {{ leader.name }}<i class="material-icons secondary-content">group</i></div></li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+        {% endif %}
+        <div class="row">
+            <h4>Change Password:</h4>
+            <form method="post" action="{% url 'Student Change Password' student.reg_no %}" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">fiber_new</i>
+                        <input type="password" id="stu_new_pass" name="new_pass" required>
+                        <label for="stu_new_pass">Enter new password</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">autorenew</i>
+                        <input type="password" id="stu_re_pass" name="re_pass" required>
+                        <label for="stu_re_pass">Re-enter new password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Change
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

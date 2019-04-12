@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Chat Rooms
+{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><span style="padding-left: 50px;">Chat Room</span></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}"><span style="padding-right: 50px;">Home Page</span> </a></li>
+      </ul>
+    </div>
+    </nav>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+    <br><br>
+    <div class="container">
+        What chat room would you like to enter?<br/>
+        <input id="room-name-input" type="text" size="100"/><br/>
+        <button class="btn waves-effect waves-light" type="submit" id="room-name-submit" value="Enter">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+        <script>
+            document.querySelector('#room-name-input').focus();
+            document.querySelector('#room-name-input').onkeyup = function(e) {
+                if (e.keyCode === 13) {  // enter, return
+                    document.querySelector('#room-name-submit').click();
+                }
+            };
+
+            document.querySelector('#room-name-submit').onclick = function(e) {
+                var roomName = document.querySelector('#room-name-input').value;
+                window.location.pathname = '/chat/' + roomName + '/';
+            };
+        </script>
+
+{% endblock %}

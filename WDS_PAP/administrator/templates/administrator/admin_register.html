@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Register as admin{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Admin Registration</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}">Home Page</a></li>
+      </ul>
+    </div>
+    </nav>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+
+    <div class="container">
+    <h1>Admin Registration:</h1>
+        <form method="post" action="{% url 'Register Admin' %}">
+            {% csrf_token %}
+            <label for="admin_user">Enter Username</label>
+            <input type="text" id="admin_user" name="admin_user" required>
+            <br><br>
+            <label for="admin_pass">Enter your password:</label>
+            <input type="password" id="admin_pass" name="admin_pass" required>
+                <br><br>
+            <label for="re_admin_pass">Re-enter password:</label>
+            <input type="password" id="re_admin_pass" name="re_admin_pass" required>
+                <br><br>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}

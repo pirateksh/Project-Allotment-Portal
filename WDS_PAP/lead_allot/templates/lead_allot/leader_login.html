@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% comment %}
+    context vars:
+    leader: Info of current Leader
+{% endcomment %}
+{% block title %}Group Leader Login{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><span style="padding-left: 50px">Project Allotment Portal</span> </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}"><span style="padding-right: 50px"> Home Page</span></a></li>
+      </ul>
+    </div>
+    </nav>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+
+    <div class="container row">
+        <h2>LEADER LOGIN</h2>
+        <form method="post" action="{% url 'Leader Home' leader.reg_no %}" class="col s12">
+            <div class="row">
+                {% csrf_token %}
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">exit_to_app</i>
+                    <input type="password" id="lead_pass" name="lead_pass" required>
+                    <label for="lead_pass">Password</label>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit">Login
+                <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

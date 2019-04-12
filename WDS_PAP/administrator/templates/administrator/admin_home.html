@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% comment %}
+    context vars:
+    admin : Info about logged in admin
+{% endcomment %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Hi, {{ admin.username }}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}">Logout</a></li>
+      </ul>
+    </div>
+    </nav>
+</div>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+
+    <div class="container">
+
+    <h2>ADMIN ACCOUNT</h2>
+
+    <h4>Add Professor:</h4>
+    <p>Do you want to add Professors? <a href="{% url 'Yes_or_no' %}"><button class="btn waves-effect waves-light" type="submit">Yes
+        <i class="material-icons right">send</i>
+        </button> </a> </p>
+
+    <h4>Group Leader allotment:</h4>
+        {% if admin.is_lead_allotted == False %}
+            <p>Do you want to allot Group Leaders? <a href="{% url 'Leader Allotment' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Allot
+        <i class="material-icons right">send</i>
+        </button></a></p>
+        {% else %}
+            <p>Group Leaders have been allotted.</p>
+        {% endif %}
+
+    <h4>Default student password setting:</h4>
+        {% if admin.is_stu_pass_set == False %}
+        <p>Set default password for student account.<a href="{% url 'Default student password' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Set
+        <i class="material-icons right">send</i>
+        </button> </a> </p>
+        {% else %}
+            <p>Default student password has been set.</p>
+        {% endif %}
+
+        <h4>Mentor assignment:</h4>
+        {% if admin.is_mentor_assigned == False and admin.is_lead_allotted == True %}
+            {% if admin.round_1 == False %}
+                <p>Assign mentors(Round 1): <a href="{% url 'Assign Mentor Round 1' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
+        <i class="material-icons right">send</i>
+        </button> </a> </p>
+            {% elif admin.round_2 == False %}
+                <p>Assign mentors(Round 2): <a href="{% url 'Assign Mentor Round 2' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
+        <i class="material-icons right">send</i>
+        </button> </a> </p>
+            {% else %}
+                <p>Assign mentors(Round 3): <a href="{% url 'Assign Mentor Round 3' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
+        <i class="material-icons right">send</i>
+        </button> </a> </p>
+            {% endif %}
+        {% elif admin.is_mentor_assigned == False and admin.is_lead_allotted == False %}
+            <p>Group Leaders not allotted yet.</p>
+        {% else %}
+            <p>Mentors have been assigned.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

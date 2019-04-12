@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo"><span style="padding-left: 50px">Project Allotment Portal</span></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="{% url 'chat:index' %}">Chat Room </a></li>
+          <li><a href="{% url 'Register Gate' %}"><span style="padding-right: 50px"> Register as admin </span> </a> </li>
+      </ul>
+    </div>
+    </nav>
+</div>
+    {% comment %}
+        Nav bar ended
+{% endcomment %}
+
+
+<div class="parallax-container">
+      <div class="parallax"><img src="{% static 'night.png' %}" alt="img"></div>
+    </div>
+
+
+<div class="container">
+<h2>Welcome to Project Allotment Portal of MNNIT.</h2>
+</div>
+
+
+
+
+<div class="container row">
+    <h3>LOGIN HERE:</h3>
+    <form method="post" action="{% url 'Entry' %}" class="col s12">
+    {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" id="id_username" name="username" required>
+                <label for="id_username">Username</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">directions_walk</i>
+                <label><b>Login as:</b></label>
+            </div>
+            <div class="input-field col s4">
+                <label>
+                 <input name="choice" id="admin" type="radio" value="admin" checked />
+                <span>Administrator</span>
+                </label>
+            </div>
+            <div class="input-field col s4">
+                <label>
+                <input name="choice" id="lead" type="radio" value="lead" />
+                <span>Group Leader</span>
+                </label>
+            </div>
+            <div class="input-field col s4">
+                <label>
+                <input name="choice" id="student" type="radio" value="student" />
+                <span>Student</span>
+                </label>
+            </div>
+
+        </div>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit">Next
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+    <br>
+</div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="{% static 'img.jpeg' %}" alt="img"></div>
+    </div>
+
+{% endblock %}

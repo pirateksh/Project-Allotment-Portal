@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% comment %}
+    context vars:
+    student: Info of current Student
+{% endcomment %}
+{% block title %}Group Leader Login{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><span style="padding-left: 50px">Project Allotment Portal</span> </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}"><span style="padding-right: 50px"> Home Page</span></a></li>
+      </ul>
+    </div>
+    </nav>
+</div>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+    <div class="container row">
+        <h2>STUDENT LOGIN</h2>
+        <form method="post" action="{% url 'Student Home' student.reg_no %}">
+            <div class="row">
+                {% csrf_token %}
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">exit_to_app</i>
+                    <input type="password" id="stu_pass" name="stu_pass" required>
+                    <label for="stu_pass">Password</label>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit">Login
+                <i class="material-icons right">send</i>
+                </button>
+                </div>
+        </form>
+    </div>
+{% endblock %}

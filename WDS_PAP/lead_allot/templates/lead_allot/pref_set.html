@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% comment %}
+    context vars:
+    prof_1: Details of pref_1
+    prof_2: Details of pref_2
+    prof_3: Details of pref_3
+    leader: Info of currently logged in Leader
+{% endcomment %}
+{% block title %}Preference Set!{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+        <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Choices</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'Dummy Leader Home' leader.reg_no%}"> Return</a>
+    {% comment %} Error in home button {% endcomment %}</li>
+          </ul>
+        </div>
+        </nav>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+    <div class="container">
+        <h2>{{ leader.name }}, your chosen preferences are:</h2>
+    <h4>Preference 1: </h4>
+    {{ prof_1.name }} Email: {{ prof_1.email }}
+    <br>
+    <h4>Preference 2: </h4>
+        {{ prof_2.name }} Email: {{ prof_2.email }}
+    <br>
+    <h4>Preference 3: </h4>
+        {{ prof_3.name }} Email: {{ prof_3.email }}
+    </div>
+
+{% endblock %}
