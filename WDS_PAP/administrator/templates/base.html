@@ -12,7 +12,7 @@
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body style="display: flex; min-height: 100vh; flex-direction: column;">
+<body style="display: flex; min-height: 100vh; flex-direction: column; background-image: url('{% static 'blurred.jpeg' %}'); background-position: center; background-size: cover;">
 {% comment %}
 <body style="display: flex; min-height: 100vh; flex-direction: column; background-image: url('{% static 'blurred.jpeg' %}'); background-position: center; background-size: cover;"  >
 
@@ -42,21 +42,21 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Disclaimer</h5>
+                <p class="grey-text text-lighten-4">This website is just a project made by MNNIT students.</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Developers</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{% url 'Developers' %}">Developers</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#">More Links</a>
+            © 2019 Team Sinners/MNNIT
+            <a class="grey-text text-lighten-4 right" href="http://www.mnnit.ac.in/">MNNIT</a>
             </div>
           </div>
         </footer>

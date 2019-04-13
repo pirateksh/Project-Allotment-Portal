@@ -6,32 +6,45 @@
     {% comment %}
         Nav Bar
     {% endcomment %}
+    <div class="navbar-fixed">
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Admin Registration</a>
+        <a href="#" class="brand-logo"><span style="padding-left: 50px">Admin Registration</span></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{% url 'home' %}">Home Page</a></li>
+          <li><a href="{% url 'home' %}"><span style="padding-right: 50px">Home Page</span></a></li>
       </ul>
     </div>
     </nav>
+    </div>
     {% comment %}
         Nav bar ended
     {% endcomment %}
 
     <div class="container">
-    <h1>Admin Registration:</h1>
-        <form method="post" action="{% url 'Register Admin' %}">
-            {% csrf_token %}
-            <label for="admin_user">Enter Username</label>
-            <input type="text" id="admin_user" name="admin_user" required>
-            <br><br>
-            <label for="admin_pass">Enter your password:</label>
-            <input type="password" id="admin_pass" name="admin_pass" required>
-                <br><br>
-            <label for="re_admin_pass">Re-enter password:</label>
-            <input type="password" id="re_admin_pass" name="re_admin_pass" required>
-                <br><br>
-            <input type="submit">
-        </form>
+    <h2>Admin Registration:</h2>
+        <div class="row">
+            <form method="post" action="{% url 'Register Admin' %}" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" id="admin_user" name="admin_user" required>
+                        <label for="admin_user">Enter Username</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">edit</i>
+                        <input type="password" id="admin_pass" name="admin_pass" required>
+                        <label for="admin_pass">Enter your password:</label>
+                    </div>
+                     <div class="input-field col s12">
+                         <i class="material-icons prefix">autorenew</i>
+                         <input type="password" id="re_admin_pass" name="re_admin_pass" required>
+                         <label for="re_admin_pass">Re-enter password:</label>
+                     </div>
+                    <button class="btn waves-effect waves-light" type="submit">Register
+            <i class="material-icons right">send</i>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}

@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% comment %}
-    Context Vars:
-    admin: Data of admin with pk=1
+    context vars:
+    admin : info of admin
 {% endcomment %}
 
-{% block title %}Enter Data{% endblock %}
+{% block title %} Add students {% endblock %}
+
 
 {% block content %}
     {% comment %}
@@ -13,14 +14,14 @@
 <div class="navbar-fixed">
     <nav>
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><span style="padding-left: 50px">Professor</span></a>
+        <a href="#" class="brand-logo"><span style="padding-left: 50px">Project Allotment Portal</span> </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-            <form method="post" action="{% url 'Return to Admin Home' admin.username %}">
+          <li>
+              <form method="post" action="{% url 'Return to Admin Home' admin.username %}">
                 {% csrf_token %}
                 <span style="padding-right: 50px"> <button class="btn waves-effect waves-light" type="submit" name="return" value="return">Return</button></span>
-            </form>
-        </li>
+              </form>
+          </li>
       </ul>
     </div>
     </nav>
@@ -29,8 +30,8 @@
         Nav bar ended
     {% endcomment %}
     <div class="container row">
-        <h2>Add Professor</h2>
-         <form method="post" action="{% url 'add_prof' admin.username%}" class="col s12">
+        <h2>Add Student</h2>
+        <form method="post" action="{% url "Add Student" admin.username%}" class="col s12">
             {% csrf_token %}
             <div class="row">
                 <div class="input-field col s6">
@@ -39,24 +40,24 @@
                     <label for="name">Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <i class="material-icons prefix">home</i>
-                    <input type="text" id="dept" name="dept" required>
-                    <label for="dept">Department</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">email</i>
-                    <input type="email" id="email" name="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-field col s6">
                     <i class="material-icons prefix">format_list_numbered</i>
-                    <input type="number" id="group" name="group" value="1" required>
-                    <label for="group">No of Groups</label>
+                    <input type="text" id="reg_no" name="reg_no" required>
+                    <label for="reg_no">Registration number</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">school</i>
-                    <input type="text" id="aoi" name="aoi">
-                    <label for="aoi">Area of Interest</label>
+                    <input type="text" id="branch" name="branch" required>
+                    <label for="branch">Branch</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">format_list_numbered</i>
+                    <input type="number" id="cpi" name="cpi" step=".01" required>
+                    <label for="cpi">CPI</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email" name="email">
+                    <label for="email">Email</label>
                 </div>
                 <button class="btn waves-effect waves-light" type="submit">Submit
                 <i class="material-icons right">send</i>

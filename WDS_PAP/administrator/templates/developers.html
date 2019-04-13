@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block title %}Developers{% endblock %}
+
+{% block content %}
+    {% comment %}
+        Nav Bar
+    {% endcomment %}
+    <div class="navbar-fixed">
+        <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><span style="padding-left: 50px">Project Allotment Portal</span></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+                  <a href="{% url 'home' %}"><span style="padding-right: 50px">Home</span></a>
+              </li>
+          </ul>
+        </div>
+        </nav>
+    </div>
+    {% comment %}
+        Nav bar ended
+    {% endcomment %}
+<div class="container ">
+ <div class="row ">
+    <div class="col s12 m5">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{% static 'fb_ksh.jpg' %}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">KSHITIZ SRIVASTAVA<i class="material-icons right">more_vert</i></span>
+              <p>Backend/Frontend Developer</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><strong>KSHITIZ SRIVASTAVA</strong><i class="material-icons right">close</i></span>
+                <p>Hey there! I am Kshitiz, currently pursuing  <b>B.Tech</b> in <b>Computer Science and Engineering</b> from <b>MNNIT, Allahabad</b>.</p>
+                <p>You can meet me at:</p>
+                <a href="https://www.facebook.com/kshitiz.srivastava.39">Facebook</a><br>
+                <a href="https://github.com/pirateksh">Github</a><br>
+                <a href="https://codeforces.com/profile/Pirate_ksh">Codeforces</a><br>
+            </div>
+        </div>
+    </div>
+
+     <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{% static 'fb_vish.jpeg' %}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">VISHWAJEET KUMAR<i class="material-icons right">more_vert</i></span>
+              <p>Team Member</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><strong>VISHWAJEET KUMAR</strong><i class="material-icons right">close</i></span>
+                <p>Hey there! I am Vishwajeet, currently pursuing  <b>B.Tech</b> in <b>Information Technology</b> from <b>MNNIT, Allahabad</b>.</p>
+                <p>You can meet me at:</p>
+                <a href="https://www.facebook.com/profile.php?id=100010709133386">Facebook</a><br>
+            </div>
+        </div>
+    </div>
+ </div>
+
+</div>
+
+{% endblock %}

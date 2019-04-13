@@ -3,7 +3,7 @@
     context vars:
     admin : Info about logged in admin
 {% endcomment %}
-{% block title %}Home{% endblock %}
+{% block title %}Admin Home{% endblock %}
 
 {% block content %}
     {% comment %}
@@ -12,9 +12,9 @@
 <div class="navbar-fixed">
     <nav>
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Hi, {{ admin.username }}</a>
+        <a href="#" class="brand-logo"><span style="padding-left: 50px"> Hi, {{ admin.username }}</span> </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{% url 'home' %}">Logout</a></li>
+          <li><a href="{% url 'home' %}"><span style="padding-right: 50px"> Logout</span></a></li>
       </ul>
     </div>
     </nav>
@@ -27,43 +27,103 @@
 
     <h2>ADMIN ACCOUNT</h2>
 
+
     <h4>Add Professor:</h4>
-    <p>Do you want to add Professors? <a href="{% url 'Yes_or_no' %}"><button class="btn waves-effect waves-light" type="submit">Yes
+    {% if admin.is_lead_allotted == True %}
+        <p>Group leaders have been allotted. Professors can't be added now.</p>
+    {% elif admin.round_1 == False %}
+        <form method="post" action="{% url 'Yes_or_no' %}">
+        {% csrf_token %}
+        Do you want to add Professors?
+        <button class="btn waves-effect waves-light" type="submit" name="choice" value="yes">Yes
         <i class="material-icons right">send</i>
-        </button> </a> </p>
+        </button>
+        </form>
+    {% endif %}
+
+    <h4>Add Students:</h4>
+
+        <form method="post" action="{% url 'Add Students or not' %}">
+        {% csrf_token %}
+        Do you want to add Students?
+        <button class="btn waves-effect waves-light" type="submit" name="choice_stu" value="yes">Yes
+        <i class="material-icons right">send</i>
+        </button>
+        </form>
+
 
     <h4>Group Leader allotment:</h4>
         {% if admin.is_lead_allotted == False %}
-            <p>Do you want to allot Group Leaders? <a href="{% url 'Leader Allotment' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Allot
-        <i class="material-icons right">send</i>
-        </button></a></p>
+
+            <form method="post" action="{% url 'Leader Allotment' admin.username %}">
+                {% csrf_token %}
+                Do you want to allot group leaders?
+                <button class="btn waves-effect waves-light" type="submit" name="allot" value="yes">Allot
+                <i class="material-icons right">send</i>
+                </button>
+            </form>
         {% else %}
             <p>Group Leaders have been allotted.</p>
         {% endif %}
 
     <h4>Default student password setting:</h4>
         {% if admin.is_stu_pass_set == False %}
-        <p>Set default password for student account.<a href="{% url 'Default student password' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Set
-        <i class="material-icons right">send</i>
-        </button> </a> </p>
+            <form method="post" action="{% url 'Default student password' admin.username %}">
+                {% csrf_token %}
+                Do you want to Set default password for student account?
+                <button class="btn waves-effect waves-light" type="submit" name="set" value="yes">Set
+                <i class="material-icons right">send</i>
+                </button>
+            </form>
         {% else %}
             <p>Default student password has been set.</p>
         {% endif %}
 
-        <h4>Mentor assignment:</h4>
+
+
+    <h4>Mentor assignment:</h4>
         {% if admin.is_mentor_assigned == False and admin.is_lead_allotted == True %}
             {% if admin.round_1 == False %}
-                <p>Assign mentors(Round 1): <a href="{% url 'Assign Mentor Round 1' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
-        <i class="material-icons right">send</i>
-        </button> </a> </p>
+
+                <form method="post" action="{% url 'Assign Mentor Round 1' admin.username %}">
+                    {% csrf_token %}
+                    Assign mentors(Round 1):
+                    <button class="btn waves-effect waves-light" type="submit" name="assign1" value="yes">Assign
+                    <i class="material-icons right">send</i>
+                    </button>
+                </form>
+
+
+
+
+{#                <p>Assign mentors(Round 1): <a href="{% url 'Assign Mentor Round 1' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign#}
+{#        <i class="material-icons right">send</i>#}
+{#        </button> </a> </p>#}
             {% elif admin.round_2 == False %}
-                <p>Assign mentors(Round 2): <a href="{% url 'Assign Mentor Round 2' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
-        <i class="material-icons right">send</i>
-        </button> </a> </p>
+
+                <form method="post" action="{% url 'Assign Mentor Round 2' admin.username %}">
+                    {% csrf_token %}
+                    Assign mentors(Round 2):
+                    <button class="btn waves-effect waves-light" type="submit" name="assign2" value="yes">Assign
+                    <i class="material-icons right">send</i>
+                    </button>
+                </form>
+
+{#                <p>Assign mentors(Round 2): <a href="{% url 'Assign Mentor Round 2' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign#}
+{#        <i class="material-icons right">send</i>#}
+{#        </button> </a> </p>#}
             {% else %}
-                <p>Assign mentors(Round 3): <a href="{% url 'Assign Mentor Round 3' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign
-        <i class="material-icons right">send</i>
-        </button> </a> </p>
+
+                <form method="post" action="{% url 'Assign Mentor Round 3' admin.username %}">
+                    {% csrf_token %}
+                    Assign mentors(Round 3):
+                    <button class="btn waves-effect waves-light" type="submit" name="assign3" value="yes">Assign
+                    <i class="material-icons right">send</i>
+                    </button>
+                </form>
+{#                <p>Assign mentors(Round 3): <a href="{% url 'Assign Mentor Round 3' admin.username %}"><button class="btn waves-effect waves-light" type="submit">Assign#}
+{#        <i class="material-icons right">send</i>#}
+{#        </button> </a> </p>#}
             {% endif %}
         {% elif admin.is_mentor_assigned == False and admin.is_lead_allotted == False %}
             <p>Group Leaders not allotted yet.</p>

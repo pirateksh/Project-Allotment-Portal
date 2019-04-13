@@ -53,7 +53,7 @@
         {% comment %} ROUND 1 ALLOTTMENT PREFERENCES {% endcomment %}
             <div class="row">
                 <p>Fill your preferences for Round 1 assignment.</p>
-                <form method="get" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
+                <form method="post" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
                     {% csrf_token %}
                     <div class="row">
                     <div class="input-field col s4">
@@ -103,7 +103,7 @@
         {% comment %} ROUND 2 ALLOTTMENT PREFERENCES {% endcomment %}
             <div class="row">
                 <p>Fill your preferences for Round 2 assignment.</p>
-                <form method="get" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
+                <form method="post" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
                     {% csrf_token %}
                     <div class="row">
                     <div class="input-field col s4">
@@ -154,7 +154,7 @@
         {% comment %} ROUND 3 ALLOTTMENT PREFERENCES {% endcomment %}
             <div class="row">
                 <p>Fill your preferences for Round 3 assignment.</p>
-                <form method="get" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
+                <form method="post" action="{% url 'Preference set' leader.reg_no %}" class="col s12">
                     {% csrf_token %}
                     <div class="row">
                     <div class="input-field col s4">
@@ -203,7 +203,7 @@
         {% else %}
 
         <p>You have already filled your preference for current round.</p>
-
+<br>
         {% endif %}
     {% elif admin.is_mentor_assigned %}
         <p>All rounds are over. Thanks for participation. All the best.</p>
@@ -211,19 +211,15 @@
         <p>Mentor has already been allotted to you. You can't fill preferences for further rounds. </p>
     {% endif %}
 
-    <h4>Mentor:</h4>
+    <ul class="collection with-header">
+        <li class="collection-header"><h5>Mentor:</h5></li>
     {% if mentor == 'none' %}
-        <p>Mentor not allotted yet.</p>
+        <li class="collection-item"><div>Mentor not allotted yet.</div></li>
     {% else %}
-        <p>Mentor has been allotted.</p>
-        <h6 style="display: inline;"><b>Name: </b></h6>{{ mentor.name }}
-        <br>
-        <h6 style="display: inline;"><b>Email:</b> </h6>{{ mentor.email }}
+        <li class="collection-item"><div>{{ mentor.name }} - {{ mentor.dept }}<span class="secondary-content"> {{ mentor.email }}<i class="material-icons secondary-content">email</i></span></div></li>
     {% endif %}
+    </ul>
 <br><br>
-
-
-
 
          <h6>Click on icon to send invite.</h6>
         <ul class="collection with-header">
@@ -235,25 +231,22 @@
         {% endfor %}
         </ul>
 
-
-
-
-
-
-
         <br><br>
-    {% if leader.invited == '0,' %}
-        <p>You have'nt invited anyone yet.</p>
-    {% else %}
-        <ul class="collection with-header">
+
+    <ul class="collection with-header">
         <li class="collection-header"><h5>Invited Students</h5></li>
+    {% if leader.invited == '0,' %}
+        <li class="collection-item"><div>You have'nt invited anyone yet.</div></li>
+    {% else %}
+
         {% for student in invited_students %}
             {% if student.is_avail %}
                 <li class="collection-item"><div>{{ student.name }} - {{ student.reg_no }}<i class="material-icons secondary-content">check</i></div></li>
             {% endif %}
         {% endfor %}
-        </ul>
+
     {% endif %}
+    </ul>
 <br>
     {% if leader.accepted_by != '0,' %}
         <ul class="collection with-header">

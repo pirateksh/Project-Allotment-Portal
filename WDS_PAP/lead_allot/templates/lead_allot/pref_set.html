@@ -12,28 +12,42 @@
     {% comment %}
         Nav Bar
     {% endcomment %}
+    <div class="navbar-fixed">
         <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Choices</a>
+            <a href="#" class="brand-logo"><span style="padding-left: 50px">Choices</span></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{% url 'Dummy Leader Home' leader.reg_no%}"> Return</a>
-    {% comment %} Error in home button {% endcomment %}</li>
+              <li>
+
+                  <form method="post" action="{% url 'Return to Leader Home' leader.reg_no %}">
+                    {% csrf_token %}
+                    <span style="padding-right: 50px"> <button class="btn waves-effect waves-light" type="submit" name="return_lead" value="return">Return</button></span>
+                  </form>
+              </li>
           </ul>
         </div>
         </nav>
+    </div>
     {% comment %}
         Nav bar ended
     {% endcomment %}
     <div class="container">
-        <h2>{{ leader.name }}, your chosen preferences are:</h2>
-    <h4>Preference 1: </h4>
-    {{ prof_1.name }} Email: {{ prof_1.email }}
-    <br>
-    <h4>Preference 2: </h4>
-        {{ prof_2.name }} Email: {{ prof_2.email }}
-    <br>
-    <h4>Preference 3: </h4>
-        {{ prof_3.name }} Email: {{ prof_3.email }}
+        <h3>{{ leader.name }}, your chosen preferences are:</h3>
+        <p>Please print this page for future reference. This will not be available in future.</p>
+        <ul class="collection with-header white">
+            <li class="collection-header white"><h5>Preference 1:</h5></li>
+            <li class="collection-item white"><div>{{ prof_1.name }} <span class="secondary-content"><i class="material-icons secondary-content">email</i>{{ prof_1.email }}</span></div></li>
+        </ul>
+
+         <ul class="collection with-header">
+            <li class="collection-header"><h5>Preference 2:</h5></li>
+            <li class="collection-item"><div>{{ prof_2.name }} <span class="secondary-content"><i class="material-icons secondary-content">email</i>{{ prof_2.email }}</span></div></li>
+         </ul>
+
+         <ul class="collection with-header">
+            <li class="collection-header"><h5>Preference 3:</h5></li>
+            <li class="collection-item"><div>{{ prof_3.name }}<span class="secondary-content"><i class="material-icons secondary-content">email</i>{{ prof_3.email }}</span> </div></li>
+        </ul>
     </div>
 
 {% endblock %}
