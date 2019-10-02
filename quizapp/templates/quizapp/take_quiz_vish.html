@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>QUIZ</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<div style="  position: fixed;
+              width: -webkit-fill-available;">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar" id="navSmall">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" target="_blank">
+        <strong>CC Club</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+              <div class="nav-link">Time Remaining :</div>
+          </li>
+          <li class="nav-item">
+            <div id="timer" class="text-white nav-link"></div>
+          </li> 
+          <li class="nav-item"> 
+            <div class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link border border-light rounded"
+              target="_blank">
+              SUBMIT<i class=" mr-2"><i class="fas fa-arrow-right"></i></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+        <!-- <main>
+
+            <div class="view jarallax" style="height: 40vh;">
+              <img class="jarallax-img" src="https://images.wallpaperscraft.com/image/line_glitter_glare_dark_95089_1920x1080.jpg" alt="">
+              <div class="mask rgba-blue-slight">
+                <div class="container flex-center text-center">
+                  <div class="row mt-5">
+                    <div class="col-md-12 wow fadeIn mb-3">
+                      <h1 class="display-3 mb-2 wow fadeInDown text-white" data-wow-delay="0.3s">CC <a class="indigo-text font-weight-bold">QUIZ</a></h1>
+                      
+                      <a class="btn btn-light-blue btn-lg wow fadeIn" data-wow-delay="0.4s">portfolio</a> <a class="btn btn-indigo btn-lg wow fadeIn" data-wow-delay="0.4s">About me</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </main> -->
+        <!-- Main layout -->
+ 
+
+        <div class="row containe night-fade-gradient">
+                <div class="col-4 mylist ripe-malinka-gradient" id="fadeShow1">
+                  <div id="list-example" class="list-group scrollspy-example1 mylist z-depth-2">
+                    <a class="list-group-item list-group-item-action active" href="#list-item-1">Item 1</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 50</a>
+                  </div>
+                </div>
+                <div class="col-sm-8 mylist">
+                  <div data-spy="scroll" data-target="#list-example" data-offset="0" class="z-depth-5 overflow-auto scrollspy-example">
+                    
+                    <p id="list-item-1">
+
+                        <div class="container scrollbar scrollbar-primary">
+                            <div class="card">
+                                <!-- style="width: 52rem;"> -->
+                                <div class="card-header text-center peach-gradient">
+                                    Question 1
+                                </div>
+                                <div class="card-body ">
+                                    <h5 class="card-title">Question:</h5>
+                                    <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                </div>
+                                <div class="card-body cloudy-knoxville-gradient">
+                                    <form action="#">
+                                        <p>
+                                            <label>
+                                                <input name="group1" type="radio" />
+                                                <span>Red</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input name="group1" type="radio" />
+                                                <span>Yellow</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input name="group1" type="radio"  />
+                                                <span>Green</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input name="group1" type="radio" />
+                                                <span>Brown</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                            <button type="reset" class="btn btn-primary">RESET</button>
+                                        </p>
+                                    </form>
+                                </div>
+                                        <!-- <div class="card-footer text-muted">
+                                            2 days ago
+                                        </div> -->
+                            </div>
+                        </div>
+
+                    </p>
+                    
+                    <p id="list-item-2">
+
+                            <div class="container">
+                                    <div class="card">
+                                        <div class="card-header text-center peach-gradient">
+                                            Question 2
+                                        </div>
+                                            <div class="card-body">
+                                                    <h5 class="card-title">Question</h5>
+                                                    <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                            </div>
+                                            <div class="card-body cloudy-knoxville-gradient">
+                                                    <form action="#">
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Red</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Yellow</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio"  />
+                                                                <span>Green</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Brown</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                                <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                                <button type="reset" class="btn btn-primary">RESET</button>
+                                                            </p>
+                                                        </form>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+
+                    </p>
+                    
+                    <p id="list-item-3">
+
+                            <div class="container">
+                                    <div class="card">
+                                        <div class="card-header text-center peach-gradient">
+                                            Question 3
+                                        </div>
+                                        <div class="card-body">
+                                                <h5 class="card-title">Question:</h5>
+                                                <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                        </div>
+                                            <div class="card-body cloudy-knoxville-gradient">
+                                                    <form action="#">
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Red</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Yellow</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio"  />
+                                                                <span>Green</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Brown</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                                <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                                <button type="reset" class="btn btn-primary">RESET</button>
+                                                            </p>
+                                                        </form>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+
+                    </p>
+                    
+                    <p id="list-item-4">
+
+                            <div class="container">
+                                    <div class="card">
+                                        <div class="card-header text-center peach-gradient">
+                                            Question 4
+                                        </div>
+                                            <div class="card-body">
+                                                    <h5 class="card-title">Question:</h5>
+                                                    <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                            </div>
+                                            <div class="card-body cloudy-knoxville-gradient">
+                                                    <form action="#">
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Red</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Yellow</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio"  />
+                                                                <span>Green</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                              <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Brown</span>
+                                                              </label>
+                                                            </p>
+                                                            <p>
+                                                                <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                                <button type="reset" class="btn btn-primary">RESET</button>
+                                                            </p>
+                                                        </form>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+
+                    </p>
+
+                    <p id="list-item-1">
+
+                            <div class="container">
+                                <div class="card">
+                                    <!-- style="width: 52rem;"> -->
+                                    <div class="card-header text-center peach-gradient">
+                                        Question 1
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Question:</h5>
+                                        <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                    </div>
+                                    <div class="card-body cloudy-knoxville-gradient">
+                                        <form action="#">
+                                            <p>
+                                                <label>
+                                                    <input name="group1" type="radio" />
+                                                    <span>Red</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label>
+                                                    <input name="group1" type="radio" />
+                                                    <span>Yellow</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label>
+                                                    <input name="group1" type="radio"  />
+                                                    <span>Green</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label>
+                                                    <input name="group1" type="radio" />
+                                                    <span>Brown</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                <button type="reset" class="btn btn-primary">RESET</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                            <!-- <div class="card-footer text-muted">
+                                                2 days ago
+                                            </div> -->
+                                </div>
+                            </div>
+    
+                        </p>
+
+                        <p id="list-item-1">
+
+                                <div class="container">
+                                    <div class="card">
+                                        <!-- style="width: 52rem;"> -->
+                                        <div class="card-header text-center peach-gradient">
+                                            Question 1
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Question:</h5>
+                                            <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                        </div>
+                                        <div class="card-body cloudy-knoxville-gradient">
+                                            <form action="#">
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio" />
+                                                        <span>Red</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio" />
+                                                        <span>Yellow</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio"  />
+                                                        <span>Green</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio" />
+                                                        <span>Brown</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                    <button type="reset" class="btn btn-primary">RESET</button>
+                                                </p>
+                                            </form>
+                                        </div>
+                                                <!-- <div class="card-footer text-muted">
+                                                    2 days ago
+                                                </div> -->
+                                    </div>
+                                </div>
+        
+                            </p>
+
+                            <p id="list-item-1">
+
+                                    <div class="container">
+                                        <div class="card">
+                                            <!-- style="width: 52rem;"> -->
+                                            <div class="card-header text-center peach-gradient">
+                                                Question 1
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Question:</h5>
+                                                <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                            </div>
+                                            <div class="card-body cloudy-knoxville-gradient">
+                                                <form action="#">
+                                                    <p>
+                                                        <label>
+                                                            <input name="group1" type="radio" />
+                                                            <span>Red</span>
+                                                        </label>
+                                                    </p>
+                                                    <p>
+                                                        <label>
+                                                            <input name="group1" type="radio" />
+                                                            <span>Yellow</span>
+                                                        </label>
+                                                    </p>
+                                                    <p>
+                                                        <label>
+                                                            <input name="group1" type="radio"  />
+                                                            <span>Green</span>
+                                                        </label>
+                                                    </p>
+                                                    <p>
+                                                        <label>
+                                                            <input name="group1" type="radio" />
+                                                            <span>Brown</span>
+                                                        </label>
+                                                    </p>
+                                                    <p>
+                                                        <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                        <button type="reset" class="btn btn-primary">RESET</button>
+                                                    </p>
+                                                </form>
+                                            </div>
+                                                    <!-- <div class="card-footer text-muted">
+                                                        2 days ago
+                                                    </div> -->
+                                        </div>
+                                    </div>
+            
+                                </p>
+
+                                <p id="list-item-1">
+
+                                        <div class="container">
+                                            <div class="card">
+                                                <!-- style="width: 52rem;"> -->
+                                                <div class="card-header text-center peach-gradient">
+                                                    Question 1
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Question:</h5>
+                                                    <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                                </div>
+                                                <div class="card-body cloudy-knoxville-gradient">
+                                                    <form action="#">
+                                                        <p>
+                                                            <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Red</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Yellow</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input name="group1" type="radio"  />
+                                                                <span>Green</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input name="group1" type="radio" />
+                                                                <span>Brown</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                            <button type="reset" class="btn btn-primary">RESET</button>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                        <!-- <div class="card-footer text-muted">
+                                                            2 days ago
+                                                        </div> -->
+                                            </div>
+                                        </div>
+                
+                                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+    <!-- <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                QUIZ
+            </div>
+                <div class="card-body">
+                        <h5 class="card-title">Question</h5>
+                        <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#!" class="btn btn-primary">SUBMIT</a>
+                </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div> -->
+
+
+
+ </div>
+
+ <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript" src="js/timer.js"></script>
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+
+</body>
+
+</html>

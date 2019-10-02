@@ -1,0 +1,73 @@
+{%extends 'blogapp/base.html' %}
+{%load static%}
+{%load quizapp_tags%}
+{%block content%}
+
+
+
+
+{% if request.user.is_staff  %}
+
+
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">CC MNNIT QUIZ PORTAL</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href='{% url "create_quiz" %}'>Create Quiz</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
+<div class="container">
+	<div class="row">
+	{%for quiz in quizes%}
+    <div class="col s6 m4">
+      <div class="card blue-grey darken-1 col-content">
+        <div class="card-content white-text">
+          <span class="card-title">{{quiz.title}}</span>
+         <table>
+         	<tr>
+         		<td>
+         			No. of Questions: 
+         		</td>
+         		<td>
+         			{{quiz.no_of_ques}}
+         		</td>
+         	</tr>
+         	<tr>
+         		<td>
+         			Time:
+         		</td>
+         		<td>
+         			{{quiz.time_lim}}
+         		</td>
+         	</tr>
+         </table>
+        </div>
+        <div class="card-action">
+          <a href="take_quiz/">Take Quiz</a>
+          <a style="cursor: pointer;" class="activator grey-text text-darken-4 right">Instructions</a>
+        </div>
+        <div class="card-reveal">
+	      <span class="card-title grey-text text-darken-4">Instructions<i class="material-icons right">close</i></span>
+	      <p>{{quiz.instructions}}</p>
+    	</div>
+      </div>
+    </div>
+
+            
+   {%endfor%}  
+   	</div>
+
+<div>   
+{%endblock%}

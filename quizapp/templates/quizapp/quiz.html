@@ -1,0 +1,192 @@
+{% load static %}
+{%load quizapp_tags%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>QUIZ</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'Bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'Bootstrap/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'Bootstrap/css/style.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'Bootstrap/css/style.css' %}">
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<div style="  position: fixed;
+              width: -webkit-fill-available;">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar" id="navSmall">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" target="_blank">
+        <strong>CC Club MNNIT</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            {%with Index="Index"%}
+            <a class="nav-link wave-effect" href="{%url Index %}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+            {%endwith%}
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          
+          <li class="nav-item">
+              <div class="nav-link">Time Remaining :</div>
+          </li>
+          <li class="nav-item">
+            <div id="timer" class="text-white nav-link"></div>
+          </li> 
+          <li class="nav-item"> 
+            <div class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link border border-light rounded wave-effect"
+              target="_blank">
+              SUBMIT<i class=" mr-2"><i class="fas fa-arrow-right"></i></i>
+            </a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <!-- Dark mode -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      <em class="text-white">Dark Mode!</em>
+   </div>
+   
+
+  </nav>
+        <div class="row dark">
+                <div class="col-4 mylist" id="fadeShow1">
+                  <div id="list-example" class="list-group scrollspy-example1 mylist z-depth-2 text-center">
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                    {% for question in questions %}
+                      
+                        <a class="list-group-item list-group-item-action dark2" href="#{{question.id}}">{{question.question}}</a>
+                      
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="col-sm-8 mylist">
+                  <div data-spy="scroll" data-target="#list-example" data-offset="0" class="z-depth-5 overflow-auto scrollspy-example">     
+                  {%for question in questions %}  
+                    <p id="list-item-{{forloop.counter}}">
+                        <div class="container scrollbar scrollbar-primary">
+                            <div class="card">
+                                <div class="card-header text-center peach-gradient">
+                                    Question {{forloop.counter}}
+                                </div>
+
+                                <div class="card-body dark2">
+                                    <h5 class="card-title">{{question.question}}</h5>
+                                    <p class="card-text">echcniekncecieocm;mc cjkeicne ccieicj?</p>
+                                </div>
+
+                                <div class="card-body dark1">
+                                    <form action="#">
+                                        {% get_options question as opt %}
+                                          <p>
+                                              <label>
+                                                  <input name="group1" type="radio" />
+                                                  <span>{{opt.0}}</span>
+                                              </label>
+                                          </p>
+                                          <p>
+                                              <label>
+                                                  <input name="group1" type="radio" />
+                                                  <span>{{opt.1}}</span>
+                                              </label>
+                                          </p>
+                                          <p>
+                                              <label>
+                                                  <input name="group1" type="radio" />
+                                                  <span>{{opt.2}}</span>
+                                              </label>
+                                          </p>
+                                          <p>
+                                              <label>
+                                                  <input name="group1" type="radio" />
+                                                  <span>{{opt.3}}</span>
+                                              </label>
+                                          </p>
+                                        <p>
+                                            <button type="submit" class="btn btn-primary border">SUBMIT</button>
+                                            <button type="reset" class="btn btn-primary border">RESET</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                  {%endfor%}                      
+                  </div>
+                </div>
+              </div>
+ </div>
+
+
+
+</body>
+
+</html>
