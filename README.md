@@ -1,4 +1,4 @@
-# Django_projects
+# Project Allotment Portal
 <h3>External Libraries used:-</h3>
 <ol>
 <l1>
