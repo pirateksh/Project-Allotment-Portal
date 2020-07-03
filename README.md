@@ -1,5 +1,69 @@
 # Project Allotment Portal
-<h3>External Libraries used:-</h3>
+
+## Project Description
+Automating the process of mentor assignment and groups formation during project allotment.
+
+## Salient Features
+* Administrator registration / login.
+* Group Leader / Student Login.
+* Admin can add professors and students.
+* Admin can trigger Group Leader Selection (Group Leaders will be selected based on CPI).
+* Admin can trigger Mentor Allotment Process (Mentor will be alloted based on specidifed Algorithm).
+* Group Leaders can fill preferance for mentors.
+* Group Leaders can invite students to join their group.
+* Students can accept Invitation to join group.
+* Mentor Allotment in 3 Rounds according to Algorithm (preference given to Group Leaders with higher CPI).
+* E-mail sent when mentor is alloted, invitation is received / accepted.
+* Chat Room Feature.
+
+## Screenshots of Website
+
+* Home Page
+![Image of Homepage](https://drive.google.com/uc?export=view&id=1UMyBBABnnXFTSuMWQVD-v85IlknSh6xH)
+
+* Admin Registration
+![Image of Admin Registration](https://drive.google.com/uc?export=view&id=1M9Qc_i5ZzYwLUYnAtHnFR-pOll7l3Ew9)
+
+* Admin Account
+![Image of Admin Account](https://drive.google.com/uc?export=view&id=1UXq7-YeCZ4IagKmJeXhZiv5MycgG068r)
+
+* Add professors
+![Image of Add professors](https://drive.google.com/uc?export=view&id=1AORyOqX5jlOfhD3i7TRgAGqSGXNcvTPm)
+
+* Add students
+![Image of Add students](https://drive.google.com/uc?export=view&id=1ifVgzJ9wj3FGr7rb4g6FoAr_Cv6u_kpv)
+
+* Leader Account
+![Image of Leader Account](https://drive.google.com/uc?export=view&id=1ho8NA6G7w1yZCYFQ3qaQXI-rVp6oAbxm)
+
+* Page after filling of Mentor Preferance by Leader for Round 1 Allotment
+![Image of Page after filling of Mentor Preferance by Leader for Round 1 Allotment](https://drive.google.com/uc?export=view&id=1iQpQtv_54OMHlSH7S0sA414HXz_Kt2RI)
+
+* Available students to invite (By Group Leader)
+![Image of Available students to invite](https://drive.google.com/uc?export=view&id=1TamyIqwimnVal-khS0K1axMV-r2xj1BK)
+
+* After Inviting Student
+![Image of After Inviting Student](https://drive.google.com/uc?export=view&id=12WCN6qhV5bhy49N4qDWjysshK-UvbEWA)
+
+* Student Account
+![Image of Student Account](https://drive.google.com/uc?export=view&id=1D2lBpkeO35rmuU3FjniUQ8pePjs1MHfE)
+
+* Student Account after accepting invitation for joining group.
+![Image of Student Account after accepting invitation for joining group.](https://drive.google.com/uc?export=view&id=1vfMh8Fd6hfc909QwL6bpCsdsUGlMChkJ)
+
+* Entering Chat Room
+![Image of Entering Chat Room](https://drive.google.com/uc?export=view&id=1XhHPrZo1iTx8cAd_Rwg38tjO5yyOFxWK)
+
+* Chat Room
+![Image of Chat Room](https://drive.google.com/uc?export=view&id=1VCK-gOGp6K78RCBXxBGk05aoVR_ODJa4)
+
+* Selected as Group Leader Email
+![Image of Selected as Group Leader Email](https://drive.google.com/uc?export=view&id=112dbzHAtZw-RgXLv6woy672jiMVHrJWh)
+
+* Mentor Allotment Email
+![Image of Mentor Allotment Email](https://drive.google.com/uc?export=view&id=1tECJ0IccnLowaR1qK1zgNH4zLU3foA8V)
+
+## External Libraries used
 <ol>
 <l1>
     Materialize CSS:
@@ -29,7 +93,7 @@
 <li>pip install twisted</li>
 </ol>
 
-<h3>Instructions</h3>
+## How to Use?
 <ol>
 <li>
     For Email notification feature(and thus website to work properly)
