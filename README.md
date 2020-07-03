@@ -8,7 +8,7 @@ Automating the process of mentor assignment and groups formation during project 
 * Group Leader / Student Login.
 * Admin can add professors and students.
 * Admin can trigger Group Leader Selection (Group Leaders will be selected based on CPI).
-* Admin can trigger Mentor Allotment Process (Mentor will be alloted based on specidifed Algorithm).
+* Admin can trigger Mentor Allotment Process (Mentor will be alloted based on specified Algorithm).
 * Group Leaders can fill preferance for mentors.
 * Group Leaders can invite students to join their group.
 * Students can accept Invitation to join group.
