@@ -1,7 +1,7 @@
 # Project Allotment Portal
 
 ## Project Description
-Automating the process of mentor assignment and groups formation during project allotment.
+Automating the process of mentor assignment and groups formation during the project allotment.
 
 ## Salient Features
 * Administrator registration / login.
